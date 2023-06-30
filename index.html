@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--==============UNICONS==================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!--==============SWIPER CSS==================-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!--==============CSS==================-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script>   
+        AOS.init(); 
+   </script>
+</head>
+<body>
+    <!--==============HEADER==================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo"> Josua Ronaldo </a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list grid">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">
+                                <i class="uil uil-estate nav__icon"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                <i class="uil uil-user nav__icon"></i> About Me
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#skills" class="nav__link">
+                                <i class="uil uil-file-alt nav__icon"></i>Skilss
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#portfolio" class="nav__link">
+                                <i class="uil uil-scenery nav__icon"></i> Portofolio
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">
+                                <i class="uil uil-message nav__icon"></i> Contact Me
+                            </a>
+                        </li>
+                    </ul>
+                    <i class="uil uil-times nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__btns">
+                    <i class="uil uil-moon change-theme" id="theme-button"></i>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="uil uil-apps"></i>
+                    </div>
+                </div>
+            </a>
+        </nav>
+    </header>
+    <!--==============MAIN==================-->
+    <main>
+        <section class="home section" id="home" style="background: url(assets/img/god.jpg);">
+            <div class="home__container container grid">
+                <div class="home__content grid">
+                    <div class="home__social">
+                        <a href="https://www.linkedin.com/in/josua-ronaldo/" class="home__social-icon">
+                            <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="https://www.behance.net/josuaronaldo" class="home__social-icon">
+                            <i class="uil uil-behance"></i>
+                        </a>
+                        <a href="https://github.com/Josua052" class="home__social-icon">
+                            <i class="uil uil-github"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__img">
+                        <svg viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                                <image class="home__blob-img" y='-80' xlink:href="assets/img/jo.jpg" ></image>
+                            </g>
+                        </svg>                        
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Hi, I'm Josua Ronaldo Pandiangan
+                        </h1>
+                        <h3 class="home__subtitle">
+                            UI/UX Designer || Front-End Developer
+                        </h3>
+                        <p class="home__description">
+                            Memiliki pengalaman dibidang IT dan memiliki niat dalam dunia Web Developer
+                        </p>
+                        <a href="#contact" class="button button--flex">
+                            Contact Me 
+                            <i class="uil uil-message button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex">
+                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                        <span class="home__scroll-name">Scroll Down</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <h2 class="section__title">Tentang Saya</h2>
+            <span class="section__subtitle"> Perkenalkan</span>
+            <div class="about__container container grid">
+                <img src="assets/img/jo.jpg" alt="" class="about__img">
+                <div class="about__data">
+                    <p class="about__description">
+                        An active student currently studying in IT field at the University of NorthSumatra with expertise in graphic, display design, and front-enddevelopers. Able to operate Adobe well and make a prototype designof an application . I have been experiencing guaranteeing anddeveloping the quality of a product for better use by users.
+                    </p>
+                    <div class="about__info">
+                        <div>
+                            <span class="about__info-title">
+                                1
+                            </span>
+                            <span class="about__info-name">
+                                Tahun <br> Pengalaman
+                            </span>
+                        </div>
+                        <div>
+                            <span class="about__info-title">
+                                4
+                            </span>
+                            <span class="about__info-name">
+                                Project <br> Terselesaikan
+                            </span>
+                        </div>
+                        <div>
+                            <span class="about__info-title">
+                                -
+                            </span>
+                            <span class="about__info-name">
+                                Pengalaman <br> Kerja   
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="about__buttons">
+                        <a href="assets/pdf/CV Josua Ronaldo Pandiangan.pdf" class="button button--flex">
+                            Download CV<i class="uil uil-download-alt button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <h2 class="section__title">Skills</h2>
+            <span class="section__subtitle">
+                Level Penguasaan Saya
+            </span>
+
+            <div class="skills__container container grid">
+                <div>
+                    <div class="skills__content skills__open">
+                        <div class="skills__header">
+                            <i class="uil uil-brackets-curly skills__icon"></i>
+                            <h1 class="skills__title">Front-End Developers</h1>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__data">
+                                <div class="skills__titles"> 
+                                    <h3 class="skills__name">HTML</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__html"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles"> 
+                                    <h3 class="skills__name">CSS</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__css"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles"> 
+                                    <h3 class="skills__name">Javascript</h3>
+                                    <span class="skills__number">60%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__javascript"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles"> 
+                                    <h3 class="skills__name">React Js</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__react"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills__content skills__close">
+                        <div class="skills__header">
+                            <i class="uil uil-swatchbook skills__icon"></i>
+                            <h1 class="skills__title">Designer</h1>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__data">
+                                <div class="skills__titles"> 
+                                    <h3 class="skills__name">Figma</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__figma"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles"> 
+                                    <h3 class="skills__name">Adobe Photoshop</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__photoshop"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles"> 
+                                    <h3 class="skills__name">Adobe Premiere Pro</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__premiere"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="services section" id="services">
+            <h2 class="section__title">Services</h2>
+            <span class="section__subtitle">Saya siap dalam menyediakan:</span>
+            <div class="service__container container grid">
+                <div class="services__content">
+                    <div>
+                        <i class="uil uil-web-grid services__icon"></i>
+                        <h3 class="services__title">UI/UX <br> Designer</h3>
+                    </div>
+                    <span class="button button--flex button--small button--link services__button">
+                        Lihat Selengkapnya
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </span>
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <h4 class="services__modal-title">UI/UX <br> Designer</h4>
+                            <i class="uil uil-times services__modal-close"></i>
+                            <ul class="services__modal-services grid">
+                                <li class="services__modal-services">
+                                    <i class="uil uil-user-check services__modal-icon"></i>
+                                    <p>Saya mendevelop user interface sebuah Website</p>
+                                </li>
+                                <li class="services__modal-services">
+                                    <i class="uil uil-user-check services__modal-icon"></i>
+                                    <p>Saya membuat sebuah element interaksi UX</p>
+                                </li>
+                                <li class="services__modal-services">
+                                    <i class="uil uil-user-check services__modal-icon"></i>
+                                    <p>Saya membuat sebuah design logo produk</p>
+                                </li>
+                                <li class="services__modal-services">
+                                    <i class="uil uil-user-check services__modal-icon"></i>
+                                    <p>Saya membuat sebuah video brand product</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__content">
+                    <div>
+                        <i class="uil uil-arrow services__icon"></i>
+                        <h3 class="services__title">Front-End <br> Developer</h3>
+                    </div>
+                    <span class="button button--flex button--small button--link services__button">
+                        Lihat Selengkapnya
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </span>
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <h4 class="services__modal-title">UI/UX <br> Designer</h4>
+                            <i class="uil uil-times services__modal-close"></i>
+                            <ul class="services__modal-services grid">
+                                <li class="services__modal-services">
+                                    <i class="uil uil-user-check services__modal-icon"></i>
+                                    <p>Saya mendevelop user interface sebuah Website</p>
+                                </li>
+                                <li class="services__modal-services">
+                                    <i class="uil uil-user-check services__modal-icon"></i>
+                                    <p>Saya membuat sebuah element interaksi UX</p>
+                                </li>
+                                <li class="services__modal-services">
+                                    <i class="uil uil-user-check services__modal-icon"></i>
+                                    <p>Saya membuat sebuah design logo produk</p>
+                                </li>
+                                <li class="services__modal-services">
+                                    <i class="uil uil-user-check services__modal-icon"></i>
+                                    <p>Saya membuat sebuah video brand product</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="portfolio-section" id="portfolio">
+            <h2 class="section__title">Portofolio</h2>
+            <div class="portfolio__container container swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/OneClickDokter.jpg" alt="" class="portfolio__img">
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">OneClick Dokter</h3>
+                            <p class="portfolio__description">A website for easier users for healthy checkup with some doctor through online or offline.</p>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                Demo <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/Freedom.jpg" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Freedom</h3>
+                            <p class="portfolio__description">A platform website which opened for everyone to discuss any case of racism in Indonesia.</p>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                Demo <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/Unicate.jpg" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Unicate</h3>
+                            <p class="portfolio__description">A platform website which providing in assist to educate of children who underprivileged or disadvantaged areas.</p>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                Demo <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next">
+                    <i class="uil uil-angle-right swiper-portfolio-icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-angle-left swiper-portfolio-icon"></i>
+                </div>
+                <!--<div class="swiper-pagination"></div>-->
+            </div>
+        </section>
+
+        <section class="contact section" id="contact">
+            <h2 class="section__title">Kontak Saya</h2>
+            <span class="section__subtitle">Dapatkan pada</span>
+            <div class="contact__container container grid">
+                <div>
+                    <div class="contact__information">
+                        <i class="uil uil-phone contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Call</h3>
+                            <span class="contact__subtitle">0812-6483-3128</span>
+                        </div>
+                    </div>
+                    <div class="contact__information">
+                        <i class="uil uil-envelope contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Mail</h3>
+                            <span class="contact__subtitle">josuaronaldo96@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact__information">
+                        <i class="uil uil-map-marker contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Location</h3>
+                            <span class="contact__subtitle">Medan, North Sumatera, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" class="contact__form grid">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Name</label>
+                            <input type="text" class="contact__input">
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Email</label>
+                            <input type="email" class="contact__input">
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Projects</label>
+                            <input type="text" class="contact__input">
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Message</label>
+                            <textarea name="" id="" cols="" rows="7" class="contact__input"></textarea>
+                        </div>
+
+                        <div>
+                            <a href="#" class="button button--flex">
+                                Send Message
+                                <i class="uil uil-message button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Josua Ronaldo Pandiangan</h1>
+                    <span class="footer__subtitle">UI/UX Designer || Video Editor || Front-End Developers</span>
+                </div>
+                <ul class="footer__links">
+                    <li>
+                        <a href="#services" class="footer__link">Services</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="footer__link">Contact Me</a>
+                    </li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="https://www.instagram.com/josua_ronaldo_/" class="footer__social">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="" class="footer__social">
+                        <i class="uil uil-twitter"></i>
+                    </a>
+                    <a href="" class="footer__social">
+                        <i class="uil uil-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <p class="footer__copy">&#169; Josua, All right reserved</p>
+    
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+    <!--==============SWIPER JS==================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!--==============MAIN JS==================-->
+    <script src="assets/js/main .js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</body>
+</html>
