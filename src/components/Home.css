@@ -602,118 +602,162 @@ body.dark-mode .contact-item-text a:hover {
     padding-right: 15px;
   }
 }
-
-
-/* Styling untuk App.jsx */
-
-/* ... (Gaya untuk .app-container, body.dark-mode, dll. yang sudah ada) ... */
-
-
-/* --- SOROT: Perbarui Gaya untuk Footer --- */
 .main-footer {
-  background-color: #fff;
-  color: #fff;
-  min-height: 150px; /* Pertahankan tinggi minimal */
-  display: flex;
-  flex-direction: column; /* Konten footer (ikon dan garis) menumpuk vertikal */
-  justify-content: space-between; /* Untuk mendorong ikon ke atas dan garis ke bawah (opsional, bisa juga pakai padding) */
-  align-items: center; /* Rata tengah seluruh konten footer secara horizontal */
-  padding-top: 2rem; /* Jarak dari atas */
-  padding-bottom: 2rem; /* Jarak dari bawah */
+  background-color: #fff; /* Latar belakang putih */
+  color: #333; /* Warna teks default gelap */
+  padding-top: 0; /* Padding diatur di container di JSX */
+  padding-bottom: 0;
+  border-top: 1px solid #e0e0e0;
 }
 
-.footer-content-wrapper {
-  display: flex;
-  flex-direction: column; /* Ikon dan garis menumpuk di dalam wrapper */
-  width: 100%;
-  max-width: 1300px; /* Lebar maksimal konten footer */
-  padding-left: 100px;
-  padding-right: 100px;
-  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
-}
-
-.footer-social-icons {
-  width: 100%; /* Agar ikon mengisi lebar wrapper */
-  display: flex;
-  justify-content: flex-end; /* SOROT: Dorong ikon ke kanan */
-  align-items: center;
-  margin-bottom: 1.5rem; /* Jarak antara ikon dan garis */
-  /* Remove margin-bottom if you want the line very close to icons */
-}
-
-.footer-social-icons a {
-  color: #808080;
-  font-size: 1.8rem;
-  transition: color 0.3s ease;
-  margin-left: 1.5rem; /* SOROT: Memberikan jarak antar ikon */
-  /* Ganti gap di parent jika ini tidak memberikan hasil yang diinginkan */
-}
-
-.footer-social-icons a:first-child {
-    margin-left: 0; /* Hapus margin kiri pada ikon pertama */
-}
-
-
-.footer-social-icons a:hover {
-  color: #fff;
-}
-
-.footer-line {
-  width: 100%; /* Lebar garis penuh */
-  height: 1px;
-  background-color: #808080;
-  margin-top: 1.5rem; /* Jarak dari bawah ikon (jika ikon punya margin-bottom) */
-  /* Jika Anda ingin garis persis di tengah vertikal tanpa peduli ikon: */
-  /* position: absolute; */
-  /* bottom: 50%; */
-  /* transform: translateY(50%); */
-}
-
-
-/* SOROT: Dark Mode untuk Footer (tetap konsisten) */
 body.dark-mode .main-footer {
-  background-color: #000;
+  background-color: #1a1a1a;
+  color: #ecf0f1;
+  /* SOROT: Garis pembatas di dark mode */
+  border-top: 1px solid #4a4a4a; /* Garis lebih gelap di dark mode */
 }
 
-body.dark-mode .footer-social-icons a {
+/* Wrapper konten di dalam footer */
+.footer-content-wrapper {
+  /* Padding vertikal sudah diatur di JSX (py-5) */
+  /* Padding horizontal sudah mengikuti container Bootstrap default (sekitar 15px di setiap sisi) */
+}
+
+/* Gaya untuk nama brand di footer */
+.footer-brand-name {
+  font-size: 1.8rem; /* Ukuran font lebih besar untuk nama */
+  font-weight: 700;
+  color: #333;
+}
+
+body.dark-mode .footer-brand-name {
+  color: #ecf0f1;
+}
+
+.footer-brand-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #6c757d; /* Warna abu-abu untuk deskripsi */
+}
+
+body.dark-mode .footer-brand-description {
+  color: #b0b0b0;
+}
+
+/* Gaya untuk judul kolom (About Me, Connect) */
+.footer-column-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+body.dark-mode .footer-column-title {
+  color: #ecf0f1;
+}
+
+/* Gaya untuk daftar tautan di footer */
+.footer-links li {
+  margin-bottom: 0.5rem; /* Jarak antar item link */
+}
+
+.footer-links a {
+  color: #6c757d; /* Warna link abu-abu */
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #007bff; /* Warna link saat hover */
+  text-decoration: underline;
+}
+
+body.dark-mode .footer-links a {
+  color: #b0b0b0;
+}
+
+body.dark-mode .footer-links a:hover {
+  color: #85a8ff;
+}
+
+/* Gaya untuk ikon sosial di footer */
+.footer-social-icons-new {
+  /* d-flex flex-wrap gap-3 sudah di JSX */
+}
+
+.footer-social-icons-new a {
+  color: #6c757d; /* Warna ikon abu-abu */
+  font-size: 1.5rem; /* Ukuran ikon */
+  transition: color 0.3s ease;
+}
+
+.footer-social-icons-new a:hover {
+  color: #007bff; /* Warna ikon saat hover */
+}
+
+body.dark-mode .footer-social-icons-new a {
+  color: #b0b0b0;
+}
+
+body.dark-mode .footer-social-icons-new a:hover {
+  color: #85a8ff;
+}
+
+
+/* Gaya untuk garis pemisah */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e0e0e0; /* Warna abu-abu terang */
+  margin-top: 1.5rem; /* Sesuaikan jarak dari elemen di atasnya */
+  margin-bottom: 1.5rem; /* Sesuaikan jarak dari elemen di bawahnya */
+}
+
+body.dark-mode .footer-divider {
+  background-color: #4a4a4a; /* Warna garis di dark mode */
+}
+
+/* Gaya untuk hak cipta */
+.footer-copyright {
+  font-size: 0.8rem;
+  color: #6c757d;
+  text-align: left; /* Teks copyright rata kiri */
+  width: 100%; /* Penting: agar mengambil lebar penuh di row */
+}
+
+body.dark-mode .footer-copyright {
   color: #a0a0a0;
 }
 
-body.dark-mode .footer-social-icons a:hover {
-  color: #fff;
-}
-
-body.dark-mode .footer-line {
-  background-color: #a0a0a0;
-}
 
 /* --- Responsivitas Footer --- */
-@media (max-width: 991.98px) {
-  .main-footer {
-    padding-left: 30px;
-    padding-right: 30px;
+@media (max-width: 767.98px) { /* Untuk sm breakpoint dan di bawah */
+  .footer-brand-col,
+  .footer-links-col,
+  .footer-connect-col {
+    text-align: center; /* Rata tengah kolom di mobile */
   }
-  .footer-content-wrapper {
-    align-items: center; /* Rata tengah ikon di mobile */
-    padding-left: 30px;
-    padding-right: 30px;
+
+  .footer-social-icons-new {
+    justify-content: center; /* Rata tengah ikon sosial di mobile */
   }
-  .footer-social-icons {
-    justify-content: center; /* SOROT: Rata tengah ikon di mobile */
+
+  .footer-brand-col .footer-brand-description,
+  .footer-links ul,
+  .footer-copyright {
+    text-align: center; /* Pastikan teks di dalam kolom juga rata tengah */
+  }
+
+  .footer-links li {
+    display: inline-block; /* Agar link bisa sejajar jika ingin di mobile */
+    margin: 0 0.5rem;
   }
 }
 
-@media (max-width: 767.98px) {
-  .main-footer {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .footer-content-wrapper {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .footer-social-icons a {
-    font-size: 1.5rem;
-    margin-left: 1rem; /* Kurangi jarak antar ikon di mobile */
-  }
+@media (max-width: 575.98px) { /* Untuk xs breakpoint */
+    .footer-links li {
+        display: block; /* Kembali ke menumpuk jika sangat kecil */
+        margin: 0 0 0.5rem 0;
+    }
 }
