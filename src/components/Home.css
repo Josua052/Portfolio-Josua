@@ -1,0 +1,719 @@
+/* Styling untuk Home.jsx */
+
+/* --- Bagian Utama Home --- */
+.home-section {
+  background-color: #f8f9fa; /* Warna latar belakang terang, sesuaikan jika perlu */
+  /* min-height: 100vh; sudah di class */
+  min-height: 90vh;
+}
+
+/* Animasi Fade-in untuk Konten Home */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Mulai 20px di bawah posisi akhir */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-fade-in {
+  animation: fadeInUp 1s ease-out forwards; /* Animasi 1 detik, ease-out, pertahankan kondisi akhir */
+}
+
+/* Targeting Row untuk padding kiri-kanan */
+.home-row-padded {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* Container untuk Teks Peran (Web Developer, UI/UX, dll.) */
+.role-text-container {
+  position: relative;
+  height: 40px; /* Sesuaikan tinggi ini agar cukup untuk 1 baris teks h2 */
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.role-text-container h2 {
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  font-size: calc(1rem + 1vw); /* Menyesuaikan ukuran font agar responsif */
+  font-weight: bold;
+}
+
+/* Keyframes untuk animasi slide teks */
+@keyframes slideOutUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Kelas animasi untuk teks */
+.text-slide-out {
+  animation: slideOutUp 0.5s forwards;
+}
+
+.text-slide-in {
+  animation: slideInUp 0.5s forwards;
+}
+
+/* --- Mask Gambar Profil --- */
+.profile-mask-container {
+  width: 500px; /* Sesuaikan ukuran container masker Anda */
+  height: 500px; /* Sesuaikan ukuran container masker Anda */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9ecef; /* Latar belakang fallback jika mask tidak penuh */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0; /* Hapus border-radius dari implementasi lingkaran sebelumnya */
+}
+
+.profile-mask-container .profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Bagian My Skills --- */
+.skills-section {
+  position: relative;
+  background-image: url('../assets/bg-programmer.jpg'); /* Ganti dengan path gambar Anda */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Opsional: paralaks */
+  color: #fff; /* Warna teks default untuk bagian ini */
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Overlay untuk gambar latar belakang Skills */
+.skills-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Warna overlay hitam dengan 60% opacity */
+  z-index: 0;
+}
+
+/* Pastikan konten Skills berada di atas overlay */
+.skills-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.skills-header-container {
+  z-index: 1;
+}
+
+.skills-content-container {
+  z-index: 1;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* Kolom Kiri: Menu Kategori Skill */
+.skills-category-menu {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.category-item {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  color: #c0c0c0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left;
+}
+
+.category-item:last-child {
+  margin-bottom: 0;
+}
+
+.category-item:hover {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.category-item.active {
+  background-color: #fff;
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+/* Kolom Kanan: Detail Skill */
+.skills-detail-card {
+  background-color: rgba(255, 255, 255, 0.1); /* Latar belakang glassmorphism */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  min-height: 250px;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.skill-tag {
+  background-color: rgba(255, 255, 255, 0.2); /* Latar belakang tag skill (lebih putih dari card) */
+  color: #fff; /* Teks tetap putih agar kontras dengan latar belakang gelap */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Border tag lebih jelas */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* SOROT: Tambahkan ini */
+  width: 100%; /* Membuat skill-tag mengisi lebar penuh kolomnya */
+  text-align: center; /* Opsional: Pusatkan teks di dalam tag jika tag full width */
+}
+
+.skill-tag:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+
+/* --- Responsiveness --- */
+
+/* Responsiveness untuk padding pada Home Row */
+@media (max-width: 1200px) {
+  .home-row-padded {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .profile-mask-container {
+    width: 400px; /* Sesuaikan ukuran container masker untuk tablet */
+    height: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  .home-row-padded {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .profile-mask-container {
+    width: 400px; /* Masih 400px untuk layar tablet */
+    height: 400px;
+  }
+  .skills-content-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .skills-category-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .category-item {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.6rem 1rem;
+  }
+  .skills-detail-card {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-row-padded {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .profile-mask-container {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+  }
+  .text-section {
+    text-align: center;
+    padding: 20px !important;
+  }
+  .button-group {
+    justify-content: center;
+  }
+  .skills-content-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .skills-category-menu {
+    border-radius: 8px;
+  }
+  .skills-detail-card {
+    padding: 1.5rem;
+  }
+}
+
+/* --- Dark Mode Overrides --- */
+
+/* Umum Dark Mode untuk seluruh body */
+body.dark-mode {
+  background-color: #000; /* Latar belakang gelap */
+  color: #ecf0f1; /* Warna teks terang */
+}
+
+/* Dark Mode untuk Home Section utama */
+body.dark-mode .home-section {
+  background-color: #000; /* Latar belakang gelap untuk bagian home */
+  color: #ecf0f1;
+}
+
+body.dark-mode .home-section h1,
+body.dark-mode .home-section h2,
+body.dark-mode .home-section p,
+body.dark-mode .home-section a {
+  color: #ecf0f1 !important; /* Pastikan semua teks berwarna terang */
+}
+
+body.dark-mode .home-section .btn-dark {
+  background-color: #fff !important; /* Warna tombol yang cocok */
+  border-color: #6c757d !important;
+  color: #000 !important;
+}
+
+body.dark-mode .profile-mask-container {
+  background-color: #4a657e; /* Warna latar masker di dark mode */
+}
+
+body.dark-mode .role-text-container h2 {
+  color: #ecf0f1 !important; /* Warna teks terang di dark mode */
+}
+
+/* Dark Mode untuk Skills Section */
+body.dark-mode .skills-section::before {
+  background-color: rgba(0, 0, 0, 0.75); /* Sedikit lebih gelap di dark mode */
+}
+
+body.dark-mode .skills-header-container h2,
+body.dark-mode .skills-header-container p {
+  color: #ecf0f1;
+}
+
+body.dark-mode .skills-category-menu {
+  background-color: #313131;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .category-item {
+  color: #a0a0a0;
+}
+
+body.dark-mode .category-item:hover {
+  background-color: #414141;
+  color: #fff;
+}
+
+body.dark-mode .category-item.active {
+  background-color: #515151; /* Warna aktif dark mode */
+  color: #fff;
+}
+
+body.dark-mode .skills-detail-card {
+  background-color: rgba(0, 0, 0, 0.3); /* Glassmorphism gelap */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .skill-tag {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ecf0f1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .skill-tag:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Bagian Contact Me --- */
+.contact-section {
+  background-color: #f8f9fa; /* Latar belakang terang untuk bagian kontak */
+  color: #333; /* Warna teks gelap */
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+body.dark-mode .contact-section {
+  background-color: #1a1a1a; /* Latar belakang gelap di dark mode */
+  color: #ecf0f1;
+}
+
+.contact-section h2,
+.contact-section p.lead {
+  color: #333; /* Pastikan warna teks header konsisten di light mode */
+}
+
+body.dark-mode .contact-section h2,
+body.dark-mode .contact-section p.lead {
+  color: #ecf0f1; /* Warna teks header di dark mode */
+}
+
+.contact-content-container {
+  padding-left: 100px; /* Konsisten dengan padding konten utama */
+  padding-right: 100px; /* Konsisten dengan padding konten utama */
+}
+
+.contact-form-card,
+.connect-card {
+  background-color: #fff; /* Latar belakang putih */
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  height: 100%; /* Agar tinggi card sama */
+}
+
+body.dark-mode .contact-form-card,
+body.dark-mode .connect-card {
+  background-color: #2c3e50; /* Latar belakang gelap di dark mode */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  color: #ecf0f1;
+}
+
+/* Gaya untuk input form */
+.contact-form-card .form-control {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+body.dark-mode .contact-form-card .form-control {
+  background-color: #34495e;
+  border-color: #4a657e;
+  color: #ecf0f1;
+}
+
+.contact-form-card .form-control::placeholder {
+  color: #888;
+}
+
+body.dark-mode .contact-form-card .form-control::placeholder {
+  color: #a0a0a0;
+}
+
+.contact-send-button {
+  background-color: #1a1a1a !important; /* Tombol gelap */
+  border-color: #1a1a1a !important;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-send-button:hover {
+  background-color: #333 !important;
+  border-color: #333 !important;
+}
+
+body.dark-mode .contact-send-button {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+  color: #ecf0f1 !important;
+}
+
+body.dark-mode .contact-send-button:hover {
+  background-color: #888 !important;
+  border-color: #888 !important;
+}
+
+
+/* Gaya untuk daftar kontak (kolom kanan) */
+.contact-info-list {
+  margin-top: 1.5rem;
+}
+
+/* SOROT: Gaya untuk setiap item kontak */
+.contact-item {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 1rem; (Dihapus karena akan diganti dengan gap di ul atau padding pada li) */
+  padding: 1rem; /* Padding internal item */
+  background-color: #f8f9fa; /* Latar belakang item kontak */
+  border: 1px solid #e0e0e0; /* Stroke/border sesuai gambar */
+  border-radius: 8px; /* Sudut membulat */
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem; /* Jarak antar item */
+}
+
+.contact-item:last-child {
+  margin-bottom: 0; /* Hapus margin bawah pada item terakhir */
+}
+
+.contact-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Efek bayangan saat hover */
+    background-color: #f0f0f0; /* Sedikit gelap saat hover */
+}
+
+/* SOROT: Gaya untuk wrapper ikon */
+.contact-item-icon-wrapper {
+    background-color: #e6e6e6; /* Latar belakang lingkaran ikon */
+    border-radius: 50%; /* Membuat bentuk lingkaran */
+    width: 40px; /* Ukuran lingkaran */
+    height: 40px; /* Ukuran lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem; /* Jarak antara lingkaran ikon dan teks */
+    flex-shrink: 0; /* Penting: mencegah lingkaran mengecil */
+}
+
+/* SOROT: Gaya untuk ikon di dalam wrapper */
+.contact-item-icon-wrapper i {
+    font-size: 1.25rem; /* Ukuran ikon */
+    color: #6c757d; /* Warna ikon (abu-abu) */
+}
+
+/* SOROT: Gaya untuk teks di dalam item kontak */
+.contact-item-text {
+    flex-grow: 1; /* Memungkinkan teks mengambil sisa ruang */
+}
+
+.contact-item-text strong {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+.contact-item-text a {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 0.9rem; /* Ukuran font link lebih kecil */
+  word-break: break-all; /* Memungkinkan URL panjang pecah baris */
+  transition: color 0.3s ease;
+}
+
+.contact-item-text a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+
+body.dark-mode .contact-info-list li a {
+  color: #85a8ff; /* Warna link di dark mode */
+}
+
+body.dark-mode .contact-info-list li a:hover {
+  color: #a0c0ff;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #007bff; /* Warna ikon */
+  min-width: 30px; /* Agar ikon tidak bergeser */
+  text-align: center;
+}
+
+body.dark-mode .contact-icon {
+  color: #85a8ff; /* Warna ikon di dark mode */
+}
+body.dark-mode .contact-item {
+    background-color: #34495e; /* Latar belakang item di dark mode */
+    border: 1px solid #4a657e; /* Border dark mode */
+    color: #ecf0f1; /* Teks terang */
+}
+
+body.dark-mode .contact-item:hover {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    background-color: #3f556a; /* Hover dark mode */
+}
+
+body.dark-mode .contact-item-icon-wrapper {
+    background-color: #4a657e; /* Latar belakang ikon di dark mode */
+}
+
+body.dark-mode .contact-item-icon-wrapper i {
+    color: #a0a0a0; /* Warna ikon di dark mode */
+}
+
+body.dark-mode .contact-item-text strong {
+    color: #ecf0f1;
+}
+
+body.dark-mode .contact-item-text a {
+    color: #85a8ff; /* Warna link di dark mode */
+}
+
+body.dark-mode .contact-item-text a:hover {
+    color: #a0c0ff;
+}
+
+/* Responsivitas untuk bagian Contact */
+@media (max-width: 991.98px) { /* md breakpoint dan di bawah */
+  .contact-content-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767.98px) { /* sm breakpoint dan di bawah */
+  .contact-content-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+/* Styling untuk App.jsx */
+
+/* ... (Gaya untuk .app-container, body.dark-mode, dll. yang sudah ada) ... */
+
+
+/* --- SOROT: Perbarui Gaya untuk Footer --- */
+.main-footer {
+  background-color: #fff;
+  color: #fff;
+  min-height: 150px; /* Pertahankan tinggi minimal */
+  display: flex;
+  flex-direction: column; /* Konten footer (ikon dan garis) menumpuk vertikal */
+  justify-content: space-between; /* Untuk mendorong ikon ke atas dan garis ke bawah (opsional, bisa juga pakai padding) */
+  align-items: center; /* Rata tengah seluruh konten footer secara horizontal */
+  padding-top: 2rem; /* Jarak dari atas */
+  padding-bottom: 2rem; /* Jarak dari bawah */
+}
+
+.footer-content-wrapper {
+  display: flex;
+  flex-direction: column; /* Ikon dan garis menumpuk di dalam wrapper */
+  width: 100%;
+  max-width: 1300px; /* Lebar maksimal konten footer */
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+}
+
+.footer-social-icons {
+  width: 100%; /* Agar ikon mengisi lebar wrapper */
+  display: flex;
+  justify-content: flex-end; /* SOROT: Dorong ikon ke kanan */
+  align-items: center;
+  margin-bottom: 1.5rem; /* Jarak antara ikon dan garis */
+  /* Remove margin-bottom if you want the line very close to icons */
+}
+
+.footer-social-icons a {
+  color: #808080;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+  margin-left: 1.5rem; /* SOROT: Memberikan jarak antar ikon */
+  /* Ganti gap di parent jika ini tidak memberikan hasil yang diinginkan */
+}
+
+.footer-social-icons a:first-child {
+    margin-left: 0; /* Hapus margin kiri pada ikon pertama */
+}
+
+
+.footer-social-icons a:hover {
+  color: #fff;
+}
+
+.footer-line {
+  width: 100%; /* Lebar garis penuh */
+  height: 1px;
+  background-color: #808080;
+  margin-top: 1.5rem; /* Jarak dari bawah ikon (jika ikon punya margin-bottom) */
+  /* Jika Anda ingin garis persis di tengah vertikal tanpa peduli ikon: */
+  /* position: absolute; */
+  /* bottom: 50%; */
+  /* transform: translateY(50%); */
+}
+
+
+/* SOROT: Dark Mode untuk Footer (tetap konsisten) */
+body.dark-mode .main-footer {
+  background-color: #000;
+}
+
+body.dark-mode .footer-social-icons a {
+  color: #a0a0a0;
+}
+
+body.dark-mode .footer-social-icons a:hover {
+  color: #fff;
+}
+
+body.dark-mode .footer-line {
+  background-color: #a0a0a0;
+}
+
+/* --- Responsivitas Footer --- */
+@media (max-width: 991.98px) {
+  .main-footer {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .footer-content-wrapper {
+    align-items: center; /* Rata tengah ikon di mobile */
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .footer-social-icons {
+    justify-content: center; /* SOROT: Rata tengah ikon di mobile */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .main-footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .footer-content-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .footer-social-icons a {
+    font-size: 1.5rem;
+    margin-left: 1rem; /* Kurangi jarak antar ikon di mobile */
+  }
+}
