@@ -104,7 +104,7 @@
 /* --- Bagian My Skills --- */
 .skills-section {
   position: relative;
-  background-image: url('../assets/bg-programmer.jpg'); /* Ganti dengan path gambar Anda */
+  background-image: url('../../assets/bg-programmer.jpg'); /* Ganti dengan path gambar Anda */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

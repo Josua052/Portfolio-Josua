@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import NavbarComponent from './components/NavbarComponent';
-import Home from './components/Home'; // Home sekarang mengandung Skills
-// import Skills from './components/Skills'; // SOROT: Hapus impor ini
+import NavbarComponent from './components/Navbar';
+import Home from './pages/Homes/Home';
+import About from './pages/Abouts/About';
+import Contact from './pages/Contacts/Contact';
+import Experience from './pages/Experiences/Experience';
+import Project from './pages/Projects/Project';
 import './App.css';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -27,11 +31,32 @@ function App() {
   };
 
   return (
-    <div className={`app-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
-      <NavbarComponent isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-      <Home /* SOROT: isDarkMode tidak lagi diteruskan karena Home tidak membutuhkannya secara langsung untuk bagian skills yang di-handle di dalam Home itu sendiri */ />
-      {/* SOROT: Hapus <Skills isDarkMode={isDarkMode} /> */}
-    </div>
+    <Router>
+      <div
+        className={`app-container ${isDarkMode ? "dark-mode" : "light-mode"}`}
+      >
+        <NavbarComponent
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/experience"
+            element={<Experience />}
+          />
+          <Route
+            path="/project"
+            element={<Project />}
+          />
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

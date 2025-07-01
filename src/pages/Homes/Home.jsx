@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Form, Card } from 'react-bootstrap'; // SOROT: Tambahkan Form dan Card
 import './Home.css';
-import profileImage from '../assets/profile.jpg';
-import maskShape from '../assets/mask-shape.png';
+import profileImage from '../../assets/profile.jpg';
+import maskShape from '../../assets/mask-shape.png';
+
 
 const Home = () => {
   // --- Start: Logic untuk Bagian Home Utama ---
@@ -121,7 +122,7 @@ const Home = () => {
       <Container fluid className="home-section d-flex align-items-center min-vh-90 content-fade-in">
         <Row className="justify-content-center align-items-center w-100 home-row-padded">
           <Col md={6} className="text-section d-flex flex-column justify-content-center p-4">
-            <h1 className="display-4 fw-bold mb-3">Hi, I'm Josua Ronaldo Pandiangan</h1>
+            <h1 className="fw-bold mb-3 display-5 display-md-4 display-lg-3">Hi, I'm Josua Ronaldo Pandiangan</h1>
             <div className="role-text-container mb-4">
               <h2 key={roleIndex} className={animationClass}>
                 {roles[roleIndex]}
