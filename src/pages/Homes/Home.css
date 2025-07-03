@@ -264,6 +264,9 @@
 }
 
 @media (max-width: 768px) {
+  .home-section{
+    padding: 100px 20px !important;
+  }
   .home-row-padded {
     padding-left: 15px;
     padding-right: 15px;
@@ -760,4 +763,31 @@ body.dark-mode .footer-copyright {
         display: block; /* Kembali ke menumpuk jika sangat kecil */
         margin: 0 0 0.5rem 0;
     }
+}
+
+.responsive-heading {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+
+  /* Ukuran teks responsif berdasarkan ukuran layar */
+  font-size: 2rem; /* Default untuk mobile (sekitar 32px) */
+}
+
+@media (min-width: 320px) {
+  .responsive-heading {
+    font-size: 3rem; /* Tablet kecil */
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-heading {
+    font-size: 2rem; /* Tablet sedang dan ke atas */
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-heading {
+    font-size: 2.5rem; /* Desktop */
+  }
 }

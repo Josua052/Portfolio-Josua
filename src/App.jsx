@@ -5,6 +5,7 @@ import About from './pages/Abouts/About';
 import Contact from './pages/Contacts/Contact';
 import Experience from './pages/Experiences/Experience';
 import Project from './pages/Projects/Project';
+import FooterComponent from './components/Footer';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
@@ -42,19 +43,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route
-            path="/experience"
-            element={<Experience />}
-          />
-          <Route
-            path="/project"
-            element={<Project />}
-          />
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
+        <FooterComponent />
       </div>
     </Router>
   );
