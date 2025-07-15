@@ -1,6 +1,8 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import './Navbar.css';
+import './Footer.css';
+import { NavLink } from "react-router-dom";
+import { Nav } from 'react-bootstrap';
+
 
 
 const FooterComponent = () => {
@@ -23,10 +25,11 @@ const FooterComponent = () => {
                 <div className="col-md-3 footer-links-col mb-4 mb-md-0">
                 <h5 className="footer-column-title mb-3">About Me</h5>
                 <ul className="list-unstyled footer-links">
-                    <li><a href="#home">Home</a></li> {/* Sesuaikan ID ini jika bagian home utama tidak ada ID */ }
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#resume">Resume</a></li> {/* Jika resume ada sebagai section terpisah */}
+                <li><NavLink to="/" className="mx-2 text-decoration-none">Home</NavLink></li>
+                <li><NavLink as={NavLink} to="/project" className="mx-2">Projects</NavLink></li>
+                <li><a href="#resume">Resume</a></li>
                 </ul>
+
                 </div>
 
                 {/* Kolom Kanan: Connect & Social Icons */}
